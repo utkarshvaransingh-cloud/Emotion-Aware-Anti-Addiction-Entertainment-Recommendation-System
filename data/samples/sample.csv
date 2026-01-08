@@ -1,0 +1,4 @@
+content_id,title,provider,content_type,duration_seconds,published_at,user_id,session_id,timestamp,event_type,watch_time_seconds,percent_watched,rewatch_count,emotion_label
+you_0000,Sample content 0,youtube,video,352,2024-03-14,user_6,sess_633,2026-01-08 00:00:00,play,51.23,14.52,2,happy
+spo_0001,Sample content 1,spotify,audio,178,2024-01-13,user_2,sess_282,2026-01-08 00:00:00,pause,80.12,44.99,1,neutral
+you_0002,Sample content 2,youtube,video,145,2024-08-02,user_1,sess_757,2026-01-08 00:00:00,stop,20.00,13.79,0,sad

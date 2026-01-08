@@ -45,6 +45,11 @@ Privacy & ethics notes
 Collector script
 - A starter collector is provided at `scripts/collect_data.py`. It supports ingesting local CSVs and placeholders for API-based fetchers. Configure API keys in `.env`.
 
+Implemented collectors and samples
+- `scripts/collect_data.py` now contains working basic implementations for YouTube and Spotify search collectors that return normalized rows for ingestion. These require keys in `.env` (`YOUTUBE_API_KEY`, `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`).
+- `scripts/generate_sample.py` generates a synthetic CSV in `data/samples/` for quick testing.
+- `data/samples/sample.csv` and `notebooks/eda_sample.ipynb` were added for quick EDA and demonstrations.
+
 Next deliverables for Phase 2
-- Fill in API-specific collectors (YouTube Data API, Spotify API) with credentials.
-- Create sample synthetic dataset and small EDA notebooks.
+- Expand collectors to include additional metadata and pagination handling for larger ingests.
+- Add automated tests for collectors and a small EDA notebook with visualizations.
