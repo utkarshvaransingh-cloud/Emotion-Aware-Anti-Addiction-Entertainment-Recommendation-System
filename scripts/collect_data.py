@@ -17,15 +17,13 @@ except ModuleNotFoundError:
     print("Missing dependency: pandas. Please install dependencies with:\n  python -m pip install -r requirements.txt")
     raise
 
-# Defer importing `requests` until API fetchers are called so CSV-only runs don't need it.
-
 try:
-    from dotenv import load_dotenv
+    import requests
 except ModuleNotFoundError:
-    def load_dotenv(path=None):
-        # dotenv not installed; skip silently for CSV-only workflows
-        print("python-dotenv not installed; skipping .env load")
-        return False
+    print("Missing dependency: requests. Please install dependencies with:\n  python -m pip install -r requirements.txt")
+    raise
+
+from dotenv import load_dotenv
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,11 +52,6 @@ def _parse_iso8601_duration(dur: str) -> int:
 
 
 def fetch_youtube_api(query: str, max_results: int = 5) -> pd.DataFrame:
-    try:
-        import requests
-    except ModuleNotFoundError:
-        raise RuntimeError("Missing dependency: requests. Install with: python -m pip install requests")
-
     api_key = os.getenv("YOUTUBE_API_KEY")
     if not api_key:
         raise RuntimeError("YOUTUBE_API_KEY not set in environment (.env)")
@@ -115,11 +108,6 @@ def fetch_youtube_api(query: str, max_results: int = 5) -> pd.DataFrame:
 
 
 def fetch_spotify_api(query: str, max_results: int = 5) -> pd.DataFrame:
-    try:
-        import requests
-    except ModuleNotFoundError:
-        raise RuntimeError("Missing dependency: requests. Install with: python -m pip install requests")
-
     client_id = os.getenv("SPOTIFY_CLIENT_ID")
     client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
     if not client_id or not client_secret:
@@ -168,19 +156,8 @@ def fetch_youtube_placeholder(query: str, max_results: int = 10) -> pd.DataFrame
 def save_raw(df: pd.DataFrame, out_path: str):
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        df.to_parquet(out, index=False)
-        print(f"Saved raw data to {out}")
-    except Exception as e:
-        msg = str(e)
-        # Common cause: missing parquet engine (pyarrow/fastparquet)
-        if "pyarrow" in msg or "fastparquet" in msg or "parquet" in msg or isinstance(e, ImportError):
-            csv_out = out.with_suffix(".csv")
-            df.to_csv(csv_out, index=False)
-            print(f"Parquet engine not available; saved CSV to {csv_out}")
-            print("To enable parquet support, install pyarrow or fastparquet:\n  python -m pip install pyarrow")
-        else:
-            raise
+    df.to_parquet(out, index=False)
+    print(f"Saved raw data to {out}")
 
 
 def main():

@@ -1,8 +1,8 @@
-fastapi==0.98.0
-uvicorn[standard]==0.22.0
-pandas==2.2.2
-numpy==1.26.4
-scikit-learn==1.3.2
-torch==2.2.0
-requests==2.31.0
-python-dotenv==1.0.0
+numpy
+pandas
+scikit-learn
+fastapi
+uvicorn
+pydantic
+requests
+deepface
