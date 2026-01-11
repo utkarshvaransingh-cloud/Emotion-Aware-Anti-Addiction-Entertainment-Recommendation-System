@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecSys Premium Hub</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent-color: #3b82f6;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-weight: 600;
+      letter-spacing: -1px;
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* Control Panel */
+    .controls {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 16px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    select {
+      background: var(--bg-color);
+      color: var(--text-primary);
+      border: 1px solid #334155;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-family: inherit;
+      min-width: 200px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Grid */
+    #recList {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .poster-placeholder {
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(45deg, #334155, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1rem;
+    }
+
+    .meta {
+      color: var(--text-secondary);
+      font-size: 0.8em;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .explanation {
+      background: rgba(59, 130, 246, 0.1);
+      color: #60a5fa;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      line-height: 1.4;
+      border-left: 3px solid var(--accent-color);
+    }
+
+    /* Special Cards */
+    .break-card {
+      border: 1px solid var(--danger);
+      background: rgba(239, 68, 68, 0.05);
+    }
+
+    .break-card .poster-placeholder {
+      background: linear-gradient(45deg, #7f1d1d, #991b1b);
+    }
+
+    .break-card .explanation {
+      background: rgba(239, 68, 68, 0.1);
+      color: #f87171;
+      border-left-color: var(--danger);
+    }
+
+    .loading {
+      text-align: center;
+      color: var(--text-secondary);
+      width: 100%;
+      grid-column: 1 / -1;
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🍿 Entertainment <span style="color:var(--accent-color)">Engine</span></h1>
+
+    <!-- User Identity Section -->
+    <div class="controls" style="border-left: 4px solid var(--accent-color);">
+      <h3>👤 User Identity</h3>
+      <div class="input-group">
+        <label>Login As</label>
+        <select id="userId">
+          <option value="u_1">User 1</option>
+          <option value="u_2">User 2</option>
+          <option value="u_3">User 3</option>
+          <option value="u_4">User 4</option>
+          <option value="u_5">User 5</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Current Vibe</label>
+        <select id="emotion">
+          <option value="happy">Happy (High Energy)</option>
+          <option value="sad">Sad (Need Cheer Up)</option>
+          <option value="bored">Bored (Need Excitement)</option>
+          <option value="anxious">Anxious (Need Calm)</option>
+        </select>
+      </div>
+
+      <div class="input-group" style="min-width: 150px;">
+        <label>Simulate Time: <span id="timeVal" style="color:var(--accent-color)">30</span> min</label>
+        <input type="range" id="sessionTime" min="0" max="300" value="30"
+          oninput="document.getElementById('timeVal').innerText = this.value">
+        <small style="color:var(--text-secondary); font-size:0.7em;">> 120min triggers Break</small>
+      </div>
+
+      <div class="input-group">
+        <label>Time of Day</label>
+        <select id="timeOfDay">
+          <option value="morning">Morning</option>
+          <option value="afternoon">Afternoon</option>
+          <option value="evening" selected>Evening</option>
+          <option value="night">Night (↑ Fatigue)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- content Access Section -->
+    <div class="controls" style="border-left: 4px solid var(--success);">
+      <h3>🔎 Explore Genres</h3>
+      <div class="input-group">
+        <label>Filter By Genre</label>
+        <select id="genreFilter">
+          <option value="all">All Genres (AI Recommended)</option>
+          <option value="action">Action</option>
+          <option value="romance">Romance</option>
+          <option value="comedy">Comedy</option>
+          <option value="sci-fi">Sci-Fi</option>
+          <option value="thriller">Thriller</option>
+          <option value="doc">Documentary</option>
+          <!-- New Genres -->
+          <option value="fantasy">Fantasy 🧙‍♂️</option>
+          <option value="horror">Horror 👻</option>
+          <option value="mystery">Mystery 🕵️‍♀️</option>
+          <option value="drama">Drama 🎭</option>
+          <option value="adventure">Adventure 🗺️</option>
+          <option value="animation">Animation 🎨</option>
+          <option value="musical">Musical 🎵</option>
+          <option value="crime">Crime 🚓</option>
+        </select>
+      </div>
+
+      <div class="input-group" style="flex-direction: row; align-items: flex-end;">
+        <button class="btn" onclick="getRecs()">Find Content</button>
+        <button class="btn" style="background: #475569;" onclick="getRecs()">🔄 Refresh</button>
+      </div>
+    </div>
+
+    <div id="recList"></div>
+  </div>
+
+  <script>
+    // Session tracking
+    let currentSessionMinutes = 0;
+
+    async function watchMovie(movieTitle, duration) {
+      // Increment session time
+      currentSessionMinutes += duration;
+      document.getElementById('sessionTime').value = currentSessionMinutes;
+      document.getElementById('timeVal').innerText = currentSessionMinutes;
+
+      // Show watching notification
+      alert(`🎬 Now watching: ${movieTitle}\n\n⏱️ Duration: ${duration} minutes\n📊 Total session: ${currentSessionMinutes} minutes${currentSessionMinutes >= 120 ? '\n\n⚠️ You\'ve crossed 120 minutes! Check recommendations...' : ''}`);
+
+      // Auto-refresh recommendations
+      await getRecs();
+    }
+
+    async function getRecs() {
+      const userId = document.getElementById('userId').value;
+      const emotion = document.getElementById('emotion').value;
+      const genreFilter = document.getElementById('genreFilter').value;
+      const sessionTime = document.getElementById('sessionTime').value;
+      const timeOfDay = document.getElementById('timeOfDay').value;
+      const listDiv = document.getElementById('recList');
+
+      listDiv.innerHTML = '<div class="loading">Analyzing your state and ranking content...</div>';
+
+      try {
+        // Hitting local API
+        const response = await fetch('http://127.0.0.1:8000/recommend', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: userId,
+            context: {
+              time_of_day: timeOfDay,
+              device_type: "browser",
+              location: "web",
+              session_minutes: parseInt(sessionTime)
+            },
+            emotion: { label: emotion },
+            genre_filter: genreFilter === "all" ? null : genreFilter
+          })
+        });
+        if (!response.ok) throw new Error('API Error');
+
+        const data = await response.json();
+        listDiv.innerHTML = '';
+
+        if (data.recommendations.length === 0) {
+          listDiv.innerHTML = '<div class="loading">No recommendations found. Try a different profile!</div>';
+          return;
+        }
+
+        data.recommendations.forEach(item => {
+          const isBreak = item.item_id === 'BREAK_ACTIVITY';
+          const card = document.createElement('div');
+          card.className = isBreak ? 'card break-card' : 'card';
+          const category = item.category ? item.category.toUpperCase() : 'WELLBEING';
+
+          // Generate poster URL
+          let bgUrl;
+          if (isBreak) {
+            bgUrl = 'https://picsum.photos/seed/break/300/450';
+          } else if (item.tmdb_id) {
+            bgUrl = `https://picsum.photos/seed/tmdb${item.tmdb_id}/300/450`;
+          } else {
+            bgUrl = `https://picsum.photos/seed/${item.item_id}/300/450`;
+          }
+
+          const matchPercent = Math.min(100, Math.round(item.score * 100));
+          const duration = Math.floor(Math.random() * 90) + 90; // 90-180 min
+
+          card.innerHTML = `
+            <div class="poster-placeholder" style="background-image: url('${bgUrl}'); background-size: cover; height: 180px; position: relative;">
+               ${isBreak ? '<span style="background:rgba(0,0,0,0.7); padding:10px; border-radius:8px;">🧘 Break</span>' :
+              `<button onclick="watchMovie('${item.title.replace(/'/g, "\\'")}', ${duration})" 
+                    style="position: absolute; bottom: 10px; right: 10px; background: rgba(59, 130, 246, 0.95); 
+                    color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; 
+                    font-weight: 600; font-size: 0.9em; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">▶ Watch</button>`}
+            </div>
+            <div class="card-content">
+                <div class="meta">
+                    <span style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">${category}</span>
+                    <span style="color:var(--success)">${matchPercent}% Match</span>
+                </div>
+                <h3>${item.title}</h3>
+                ${!isBreak ? `<small style="color: var(--text-secondary);">⏱️ ${duration} min</small><br>` : ''}
+                <div class="explanation">
+                    ${item.explanation}
+                </div>
+            </div>
+          `;
+          listDiv.appendChild(card);
+        });
+
+      } catch (err) {
+        listDiv.innerHTML = `<div class="loading" style="color:var(--danger)">
+                    Connection Failed.<br>
+                    Is the backend server running?<br>
+                    Run <code>start_api.bat</code> first.
+                </div>`;
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+
+</html>

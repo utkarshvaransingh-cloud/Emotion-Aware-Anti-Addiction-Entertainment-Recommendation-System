@@ -12,13 +12,25 @@ class FinalRanker:
         self.baseline = BaselineRecommender(self.data["items"])
         self.explainer = ExplanationEngine()
 
-    def rank(self, user_id: str, user_state: Dict[str, Any], candidates: List[str] = None) -> List[Dict[str, Any]]:
+    def rank(self, user_id: str, user_state: Dict[str, Any], candidates: List[str] = None, genre_filter: str = None) -> List[Dict[str, Any]]:
         """
         Ranks candidates based on user state (emotion, fatigue).
         Returns list of dicts: {'item_id': str, 'score': float, 'explanation': str}
         """
-        
-        # 1. Check for hard interventions
+        # 1. Candidate Selection
+        # If user explicitly filters by genre, we MUST fetch items from that genre,
+        # ignoring the user's history-biased baseline (Exploration Mode).
+        if genre_filter and genre_filter.lower() != "all":
+            # Filter items by category
+            candidates = self.items_df[self.items_df['category'].str.lower() == genre_filter.lower()].index.tolist()
+            if not candidates:
+                return [] # No items exist for this genre at all
+        elif candidates is None:
+            # Standard Mode: personalised candidates
+            # Get more than needed to allow for filtering
+            candidates = self.baseline.recommend(user_id, top_k=20)
+
+        # 2. Add 'Hard Break' intervention if fatigue is critical
         fatigue = user_state.get("fatigue", {})
         if fatigue.get("intervention") == "hard_break":
             explanation = self.explainer.generate_explanation(user_state, context="intervention")
@@ -41,8 +53,13 @@ class FinalRanker:
         for item_id in candidates:
             if item_id not in self.items_df.index:
                 continue
-                
+            
             item_meta = self.items_df.loc[item_id].to_dict()
+            
+            # Genre Filter Check
+            if genre_filter and genre_filter.lower() != "all":
+                if item_meta["category"].lower() != genre_filter.lower():
+                    continue
             
             # Base score (mock: random + popularity)
             score = 0.5 + (item_meta.get("popularity", 0.5) * 0.5)
@@ -76,10 +93,11 @@ class FinalRanker:
             
             ranked_items.append({
                 "item_id": item_id,
-                "title": item_meta["title"],
-                "category": item_meta["category"],
+                "title": item_meta.get("title", item_id),
+                "category": item_meta.get("category", "unknown"),
                 "score": score,
-                "explanation": explanation
+                "explanation": explanation,
+                "tmdb_id": item_meta.get("tmdb_id", None)
             })
             
         # 7. Sort and Return

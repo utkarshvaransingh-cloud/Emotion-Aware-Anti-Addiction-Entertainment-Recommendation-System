@@ -18,8 +18,9 @@ class ItemFeatures(BaseModel):
 
 class ContextFeatures(BaseModel):
     time_of_day: str # "morning", "afternoon", "evening", "night"
-    device_type: str # "mobile", "desktop"
+    device_type: str # "mobile", "desktop", "tv"
     location: Optional[str] = None
+    session_minutes: Optional[int] = 0 # New: Allow simulating fatigue from frontend
     
 class EmotionFeatures(BaseModel):
     valence: float # -1.0 to 1.0

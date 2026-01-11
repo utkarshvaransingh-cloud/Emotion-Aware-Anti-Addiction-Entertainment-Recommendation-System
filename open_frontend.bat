@@ -1,0 +1,3 @@
+@echo off
+echo Opening Frontend in your default browser...
+start src\frontend\index.html

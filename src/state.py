@@ -68,14 +68,13 @@ def get_user_state(
         if iid in items_df.index:
             item_meta_subset[iid] = items_df.loc[iid].to_dict()
             
+    # Use provided session duration from context (frontend simulation) or default mock logic
+    session_minutes = context.session_minutes if context.session_minutes is not None and context.session_minutes > 0 else 60
+    
+    # Calculate repetition based on recent history
     repetition_idx = calculate_repetition_index(recent_items, item_meta_subset)
     
-    # Mock session duration (random or passed in context?) 
-    # For now, let's assume a default or derive from context if possible. 
-    # We'll mock it as 60 mins for existing users, 0 for new.
-    session_minutes = 60.0 if recent_items else 0.0
-    
-    # Time of day penalty
+    # Convert time_of_day string to penalty float (night = higher fatigue)
     tod_penalty = 1.0 if context.time_of_day == "night" else 0.0
     
     fatigue_score = compute_fatigue_score(
