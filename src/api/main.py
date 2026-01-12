@@ -75,6 +75,40 @@ def get_recommendations(request: RecommendRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.post("/log_interaction")
+def log_interaction(interaction: Dict[str, Any] = Body(...)):
+    """
+    Log user interaction (watch history) for ML training.
+    Stores: user_id, movie_id, emotion, time_of_day, duration_watched, etc.
+    """
+    try:
+        import json
+        from pathlib import Path
+        
+        # Ensure data directory exists
+        data_dir = Path(__file__).parent.parent.parent / "data"
+        data_dir.mkdir(exist_ok=True)
+        
+        interactions_file = data_dir / "interactions.json"
+        
+        # Load existing interactions
+        if interactions_file.exists():
+            with open(interactions_file, 'r') as f:
+                interactions = json.load(f)
+        else:
+            interactions = []
+        
+        # Append new interaction
+        interactions.append(interaction)
+        
+        # Save back
+        with open(interactions_file, 'w') as f:
+            json.dump(interactions, f, indent=2)
+        
+        return {"status": "logged", "total_interactions": len(interactions)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to log interaction: {str(e)}")
+
 @app.post("/user/{user_id}/state")
 def get_current_user_state(user_id: str, context: ContextFeatures, emotion: Optional[Dict[str, Any]] = None):
     """

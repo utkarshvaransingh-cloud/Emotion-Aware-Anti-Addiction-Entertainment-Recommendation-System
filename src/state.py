@@ -71,6 +71,11 @@ def get_user_state(
     # Use provided session duration from context (frontend simulation) or default mock logic
     session_minutes = context.session_minutes if context.session_minutes is not None and context.session_minutes > 0 else 60
     
+    # Mock cumulative daily minutes (sum of all interaction durations for this user)
+    # In a real app, this would be an aggregation over the last 24h.
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+    cumulative_daily_minutes += session_minutes # add current session
+    
     # Calculate repetition based on recent history
     repetition_idx = calculate_repetition_index(recent_items, item_meta_subset)
     
@@ -80,6 +85,7 @@ def get_user_state(
     fatigue_score = compute_fatigue_score(
         session_duration_minutes=session_minutes,
         repetition_index=repetition_idx,
+        cumulative_daily_minutes=cumulative_daily_minutes,
         time_of_day_penalty=tod_penalty
     )
     
@@ -98,6 +104,7 @@ def get_user_state(
             "metrics": {
                 "repetition": repetition_idx,
                 "session_minutes": session_minutes,
+                "cumulative_minutes": cumulative_daily_minutes,
                 "tod_penalty": tod_penalty
             }
         }

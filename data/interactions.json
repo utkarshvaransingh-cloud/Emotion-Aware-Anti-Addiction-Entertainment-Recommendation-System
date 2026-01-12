@@ -1,0 +1,79 @@
+[
+  {
+    "user_id": "u_1",
+    "movie_id": "i_5",
+    "title": "Gladiator",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 2,
+    "movie_duration": 145,
+    "completed": false,
+    "timestamp": "2026-01-11T21:01:10.784Z"
+  },
+  {
+    "user_id": "u_3",
+    "movie_id": "i_24",
+    "title": "21 Jump Street",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 108,
+    "completed": false,
+    "timestamp": "2026-01-11T21:02:33.988Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_5",
+    "title": "Gladiator",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 155,
+    "completed": false,
+    "timestamp": "2026-01-11T21:02:59.422Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_5",
+    "title": "Gladiator",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 155,
+    "completed": false,
+    "timestamp": "2026-01-11T21:02:59.423Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_68",
+    "title": "Inside Out",
+    "emotion": "bored",
+    "time_of_day": "evening",
+    "duration_watched": 2,
+    "movie_duration": 144,
+    "completed": false,
+    "timestamp": "2026-01-11T21:05:49.762Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_68",
+    "title": "Inside Out",
+    "emotion": "bored",
+    "time_of_day": "evening",
+    "duration_watched": 2,
+    "movie_duration": 144,
+    "completed": false,
+    "timestamp": "2026-01-11T21:05:49.763Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_40",
+    "title": "Shutter Island",
+    "emotion": "anxious",
+    "time_of_day": "morning",
+    "duration_watched": 0,
+    "movie_duration": 111,
+    "completed": false,
+    "timestamp": "2026-01-11T21:22:21.665Z"
+  }
+]

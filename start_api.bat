@@ -15,6 +15,6 @@ echo.
 echo 3. Starting FastAPI Server...
 echo    (Keep this window OPEN while using the frontend)
 echo.
-python src/api/main.py
+python backend/app.py
 
 pause

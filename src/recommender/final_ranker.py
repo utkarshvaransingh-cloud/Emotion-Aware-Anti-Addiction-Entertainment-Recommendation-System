@@ -4,6 +4,7 @@ from src.state import get_user_state
 from src.recommender.baseline import BaselineRecommender
 from src.data_ingestion import load_raw_data
 from src.explainability.engine import ExplanationEngine
+from src.learning.preference_learner import PreferenceLearner
 
 class FinalRanker:
     def __init__(self):
@@ -11,6 +12,7 @@ class FinalRanker:
         self.items_df = self.data["items"].set_index("item_id")
         self.baseline = BaselineRecommender(self.data["items"])
         self.explainer = ExplanationEngine()
+        self.learner = PreferenceLearner()  # ML Learning System
 
     def rank(self, user_id: str, user_state: Dict[str, Any], candidates: List[str] = None, genre_filter: str = None) -> List[Dict[str, Any]]:
         """
@@ -30,7 +32,7 @@ class FinalRanker:
             # Get more than needed to allow for filtering
             candidates = self.baseline.recommend(user_id, top_k=20)
 
-        # 2. Add 'Hard Break' intervention if fatigue is critical
+        # 2. Case 1: Hard Break Intervention
         fatigue = user_state.get("fatigue", {})
         if fatigue.get("intervention") == "hard_break":
             explanation = self.explainer.generate_explanation(user_state, context="intervention")
@@ -42,14 +44,15 @@ class FinalRanker:
                 "type": "intervention"
             }]
 
-        # 2. Get candidates if not provided
+        # 3. Get candidates if not provided
         if not candidates:
             # Get more than needed to allow for filtering
             candidates = self.baseline.recommend(user_id, top_k=20)
             
         ranked_items = []
+        intervention_type = fatigue.get("intervention")
         
-        # 3. Score each candidate
+        # 4. Score each candidate
         for item_id in candidates:
             if item_id not in self.items_df.index:
                 continue
@@ -64,42 +67,85 @@ class FinalRanker:
             # Base score (mock: random + popularity)
             score = 0.5 + (item_meta.get("popularity", 0.5) * 0.5)
             
-            # 4. Adjust for Fatigue (Diversity)
-            # If fatigue is high, penalize items with same category as recent history
+            # 5. Adjust for Fatigue (Diversity & Anti-Addiction)
             recent_items = user_state.get("recent_interaction_items", [])
             recent_cats = set()
             for rid in recent_items:
                 if rid in self.items_df.index:
                     recent_cats.add(self.items_df.loc[rid]["category"])
             
-            if fatigue.get("score", 0.0) > 0.4:
-                if item_meta["category"] in recent_cats:
-                    score *= 0.5 # Penalize
+            fatigue_score = fatigue.get("score", 0.0)
+            item_genre = item_meta.get("category", "unknown")
             
-            # 5. Adjust for Emotion
-            emotion = user_state.get("emotion", {})
-            label = emotion.get("label", "neutral")
+            # A. Penalty for repetitive genres
+            if fatigue_score > 0.4:
+                if item_genre in recent_cats:
+                    # Penalize harder as fatigue grows
+                    penalty = 0.5 * (fatigue_score + 0.5)
+                    score /= penalty
             
-            # Mock logic: Sad users like Comedy; Happy users like Action
-            if label == "sad" and item_meta["category"] == "comedy":
+            # B. Soft Break / Diversify Intervention
+            if intervention_type in ["soft_break", "diversify"]:
+                if item_genre in recent_cats:
+                    score *= 0.3 # Strong penalty to force diversity
+                else:
+                    score *= 1.5 # Boost novel genres
+            
+            # C. Binge-prevention: Penalize very popular/addictive content if fatigue is rising
+            if fatigue_score > 0.6:
+                popularity = item_meta.get("popularity", 0.5)
+                if popularity > 0.8:
+                    score *= (1.1 - fatigue_score) # Dampen high-popularity items
+
+            # 6. Emotion Adjustment (Keep existing logic but move it here)
+            emotion_label = user_state.get("emotion", {}).get("label", "neutral")
+            
+            # Strong emotion-based boosts
+            if emotion_label == "sad" and item_genre == "comedy":
+                score *= 2.5
+            elif emotion_label == "sad" and item_genre == "romance":
+                score *= 1.8
+            elif emotion_label == "anxious" and item_genre in ["doc", "animation"]:
+                score *= 2.0
+            elif emotion_label == "happy" and item_genre in ["action", "adventure"]:
+                score *= 2.2
+            elif emotion_label == "bored" and item_genre in ["thriller", "sci-fi", "mystery"]:
+                score *= 2.3
+            elif emotion_label == "neutral":
+                # For neutral, we just let personalization and baseline drive it, 
+                # but maybe give a slight variety boost
+                score *= 1.0
+            
+            # Time-of-day adjustments
+            time_of_day = user_state.get("context", {}).get("time_of_day", "evening")
+            if time_of_day == "morning" and item_genre in ["doc", "animation"]:
+                score *= 1.6
+            elif time_of_day == "night" and item_genre in ["thriller", "horror", "mystery"]:
+                score *= 1.8
+            elif time_of_day == "afternoon" and item_genre in ["comedy", "romance"]:
                 score *= 1.5
-            elif label == "happy" and item_meta["category"] == "action":
-                score *= 1.2
-            elif label == "bored" and item_meta["category"] in ["thriller", "sci-fi"]:
-                score *= 1.3
                 
-            # 6. Generate Explanation
+            # 7. ML Personalization Boost
+            personalization_multiplier = self.learner.calculate_personalization_boost(
+                user_id=user_id,
+                item_genre=item_genre,
+                current_emotion=emotion_label,
+                current_time=time_of_day
+            )
+            score *= personalization_multiplier
+                
+            # 8. Generate Explanation
             explanation = self.explainer.generate_explanation(user_state, item=item_meta, context="recommendation")
             
             ranked_items.append({
                 "item_id": item_id,
                 "title": item_meta.get("title", item_id),
-                "category": item_meta.get("category", "unknown"),
+                "category": item_genre,
                 "score": score,
                 "explanation": explanation,
                 "tmdb_id": item_meta.get("tmdb_id", None)
             })
             
-        # 7. Sort and Return
+        # 9. Sort and Return
         ranked_items.sort(key=lambda x: x["score"], reverse=True)
         return ranked_items[:10]

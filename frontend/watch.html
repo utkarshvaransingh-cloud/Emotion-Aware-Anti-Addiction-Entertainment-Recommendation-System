@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Now Watching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent-color: #3b82f6;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .watch-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .player-area {
+      flex: 1;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .player-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    }
+
+    .movie-title {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      font-size: 3rem;
+      font-weight: 600;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .controls-bar {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .timer {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .session-info {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .info-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Break Alert Overlay */
+    .break-alert {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s;
+    }
+
+    .break-alert.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+    .break-content {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px;
+    }
+
+    .break-icon {
+      font-size: 5rem;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .break-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--danger);
+    }
+
+    .break-message {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+    }
+
+    .countdown {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-top: 20px;
+    }
+
+    .playing-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(59, 130, 246, 0.2);
+      padding: 10px 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="watch-container">
+    <div class="player-area" id="playerArea">
+      <div class="player-overlay"></div>
+      <h1 class="movie-title" id="movieTitle">Loading...</h1>
+      <div class="playing-indicator">
+        <span style="color: var(--success);">● WATCHING</span>
+      </div>
+    </div>
+
+    <div class="controls-bar">
+      <div class="session-info">
+        <div class="info-item">
+          <span class="info-label">Watch Time</span>
+          <span class="info-value timer" id="watchTimer">0:00</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Total Session</span>
+          <span class="info-value" id="sessionTime">0 min</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Duration</span>
+          <span class="info-value" id="movieDuration">-- min</span>
+        </div>
+      </div>
+      <button class="btn" onclick="returnToBrowse()">← Return to Browse</button>
+    </div>
+  </div>
+
+  <!-- Break Alert Overlay -->
+  <div class="break-alert" id="breakAlert">
+    <div class="break-content">
+      <div class="break-icon">🧘</div>
+      <h2 class="break-title">Time for a Break!</h2>
+      <p class="break-message">
+        You've been watching for a while.<br>
+        Your well-being matters more than content.<br><br>
+        Consider taking a short walk, stretching, or resting your eyes.
+      </p>
+      <div class="countdown" id="countdown">This alert will dismiss in <span id="countdownSeconds">20</span> seconds...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieTitle = urlParams.get('title') || 'Unknown Movie';
+    const duration = parseInt(urlParams.get('duration')) || 120;
+    const tmdbId = urlParams.get('tmdb') || '';
+    const emotion = urlParams.get('emotion') || 'happy';
+    const timeOfDay = urlParams.get('time') || 'evening';
+    const userId = urlParams.get('user') || 'u_1';
+    const movieId = urlParams.get('id') || 'i_1';
+
+    let currentSessionMinutes = parseInt(urlParams.get('session')) || 0;
+    let watchSeconds = 0;
+    let breakAlertShown = false;
+
+    document.getElementById('movieTitle').textContent = movieTitle;
+    document.getElementById('movieDuration').textContent = `${duration} min`;
+    document.getElementById('sessionTime').textContent = `${currentSessionMinutes} min`;
+
+    if (tmdbId) {
+      document.getElementById('playerArea').style.backgroundImage =
+        `url('https://picsum.photos/seed/tmdb${tmdbId}/1920/1080')`;
+    }
+
+    const timerInterval = setInterval(() => {
+      watchSeconds++;
+      const minutes = Math.floor(watchSeconds / 60);
+      const seconds = watchSeconds % 60;
+      document.getElementById('watchTimer').textContent =
+        `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+      if (watchSeconds % 60 === 0) {
+        currentSessionMinutes++;
+        document.getElementById('sessionTime').textContent = `${currentSessionMinutes} min`;
+
+        if (currentSessionMinutes >= 120 && !breakAlertShown) {
+          showBreakAlert();
+          breakAlertShown = true;
+        }
+      }
+    }, 1000);
+
+    function showBreakAlert() {
+      const alert = document.getElementById('breakAlert');
+      alert.classList.add('active');
+
+      let countdown = 20;
+      const countdownElement = document.getElementById('countdownSeconds');
+
+      const countdownInterval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(countdownInterval);
+          alert.style.animation = 'fadeOut 0.3s';
+          setTimeout(() => {
+            alert.classList.remove('active');
+            alert.style.animation = '';
+          }, 300);
+        }
+      }, 1000);
+    }
+
+    function returnToBrowse() {
+      logInteraction();
+      window.location.href = `index.html?session=${currentSessionMinutes}`;
+    }
+
+    async function logInteraction() {
+      try {
+        await fetch('http://127.0.0.1:8080/log_interaction', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: userId,
+            movie_id: movieId,
+            title: movieTitle,
+            emotion: emotion,
+            time_of_day: timeOfDay,
+            duration_watched: Math.floor(watchSeconds / 60),
+            movie_duration: duration,
+            completed: watchSeconds >= duration * 60,
+            timestamp: new Date().toISOString()
+          })
+        });
+      } catch (err) {
+        console.error('Failed to log interaction:', err);
+      }
+    }
+
+    window.addEventListener('beforeunload', logInteraction);
+  </script>
+</body>
+
+</html>

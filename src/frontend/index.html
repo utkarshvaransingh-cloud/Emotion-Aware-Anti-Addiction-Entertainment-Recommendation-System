@@ -186,6 +186,68 @@
       grid-column: 1 / -1;
       padding: 50px;
     }
+
+    /* Health Meter */
+    .health-section {
+      margin-bottom: 25px;
+      width: 100%;
+    }
+
+    .health-bar-container {
+      width: 100%;
+      height: 12px;
+      background: #1e293b;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 10px;
+    }
+
+    .health-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.5s ease, background-color 0.5s ease;
+      background-color: var(--success);
+    }
+
+    .health-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 5px;
+    }
+
+    /* Hard Break Overlay */
+    #breakOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #breakOverlay h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--danger);
+    }
+
+    #breakOverlay p {
+      max-width: 500px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+    }
   </style>
 </head>
 
@@ -214,6 +276,7 @@
           <option value="sad">Sad (Need Cheer Up)</option>
           <option value="bored">Bored (Need Excitement)</option>
           <option value="anxious">Anxious (Need Calm)</option>
+          <option value="neutral">Neutral (Balanced)</option>
         </select>
       </div>
 
@@ -266,24 +329,39 @@
       </div>
     </div>
 
+    <!-- Health Meter -->
+    <div class="health-section">
+      <label>Your Digital Health Status</label>
+      <div class="health-bar-container">
+        <div id="healthBar" class="health-bar" style="width: 20%;"></div>
+      </div>
+      <div class="health-stats">
+        <span id="healthLabel">Status: Fresh</span>
+        <span id="sessionLabel">Session: 30 min</span>
+      </div>
+    </div>
+
     <div id="recList"></div>
   </div>
 
   <script>
-    // Session tracking
-    let currentSessionMinutes = 0;
+    // Session tracking from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentSessionMinutes = parseInt(urlParams.get('session')) || 0;
 
-    async function watchMovie(movieTitle, duration) {
-      // Increment session time
-      currentSessionMinutes += duration;
+    // Update session slider if coming back from watch page
+    if (currentSessionMinutes > 0) {
       document.getElementById('sessionTime').value = currentSessionMinutes;
       document.getElementById('timeVal').innerText = currentSessionMinutes;
+    }
 
-      // Show watching notification
-      alert(`🎬 Now watching: ${movieTitle}\n\n⏱️ Duration: ${duration} minutes\n📊 Total session: ${currentSessionMinutes} minutes${currentSessionMinutes >= 120 ? '\n\n⚠️ You\'ve crossed 120 minutes! Check recommendations...' : ''}`);
+    function watchMovie(movieTitle, duration, movieId, tmdbId) {
+      const userId = document.getElementById('userId').value;
+      const emotion = document.getElementById('emotion').value;
+      const timeOfDay = document.getElementById('timeOfDay').value;
 
-      // Auto-refresh recommendations
-      await getRecs();
+      // Navigate to watch section
+      window.location.href = `watch.html?title=${encodeURIComponent(movieTitle)}&duration=${duration}&id=${movieId}&tmdb=${tmdbId || ''}&emotion=${emotion}&time=${timeOfDay}&user=${userId}&session=${currentSessionMinutes}`;
     }
 
     async function getRecs() {
@@ -318,6 +396,9 @@
         const data = await response.json();
         listDiv.innerHTML = '';
 
+        // Update Health Meter
+        updateHealthMeter(data.meta || {});
+
         if (data.recommendations.length === 0) {
           listDiv.innerHTML = '<div class="loading">No recommendations found. Try a different profile!</div>';
           return;
@@ -343,14 +424,16 @@
           const duration = Math.floor(Math.random() * 90) + 90; // 90-180 min
 
           card.innerHTML = `
-            <div class="poster-placeholder" style="background-image: url('${bgUrl}'); background-size: cover; height: 180px; position: relative;">
-               ${isBreak ? '<span style="background:rgba(0,0,0,0.7); padding:10px; border-radius:8px;">🧘 Break</span>' :
-              `<button onclick="watchMovie('${item.title.replace(/'/g, "\\'")}', ${duration})" 
-                    style="position: absolute; bottom: 10px; right: 10px; background: rgba(59, 130, 246, 0.95); 
-                    color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; 
-                    font-weight: 600; font-size: 0.9em; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">▶ Watch</button>`}
+            <div class="poster-placeholder" style="background-image: url('${bgUrl}'); background-size: cover; height: 180px;">
+               ${isBreak ? '<span style="background:rgba(0,0,0,0.7); padding:10px; border-radius:8px;">🧘 Break</span>' : ''}
             </div>
             <div class="card-content">
+                ${!isBreak ? `<button onclick="watchMovie('${item.title.replace(/'/g, "\\'")}', ${duration}, '${item.item_id}', '${item.tmdb_id || ''}' )" 
+                  style="width: 100%; background: transparent; border: 1px solid rgba(59, 130, 246, 0.5); 
+                  color: var(--accent-color); padding: 5px 10px; border-radius: 4px; cursor: pointer; 
+                  font-size: 0.7em; font-weight: 500; margin-bottom: 8px; transition: all 0.2s;"
+                  onmouseover="this.style.background='rgba(59, 130, 246, 0.1)'"
+                  onmouseout="this.style.background='transparent'">▶ Watch</button>` : ''}
                 <div class="meta">
                     <span style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">${category}</span>
                     <span style="color:var(--success)">${matchPercent}% Match</span>
@@ -374,7 +457,58 @@
         console.error(err);
       }
     }
+    function updateHealthMeter(meta) {
+      const bar = document.getElementById('healthBar');
+      const label = document.getElementById('healthLabel');
+      const overlay = document.getElementById('breakOverlay');
+
+      const intervention = meta.fatigue_intervention;
+      const fatigueScore = meta.fatigue_score || 0; // Backend needs to return this in meta if not there
+
+      // Use slider value as proxy if not in meta
+      const sessionMinutes = document.getElementById('sessionTime').value;
+      const calculatedFatigue = intervention === 'hard_break' ? 0.95 : (intervention === 'soft_break' ? 0.7 : (intervention === 'diversify' ? 0.5 : sessionMinutes / 400));
+
+      const percent = Math.min(100, Math.round(calculatedFatigue * 100));
+      bar.style.width = percent + '%';
+
+      if (percent > 84 || intervention === 'hard_break') {
+        bar.style.backgroundColor = 'var(--danger)';
+        label.innerHTML = 'Status: Critical Fatigue 🚨';
+        document.getElementById('breakOverlay').style.display = 'flex';
+      } else if (percent > 60) {
+        bar.style.backgroundColor = '#f59e0b'; // Amber
+        label.innerHTML = 'Status: Feeling Tired ⚠️';
+        document.getElementById('breakOverlay').style.display = 'none';
+      } else if (percent > 40) {
+        bar.style.backgroundColor = '#fbbf24'; // Yellow
+        label.innerHTML = 'Status: Warning 👓';
+        document.getElementById('breakOverlay').style.display = 'none';
+      } else {
+        bar.style.backgroundColor = 'var(--success)';
+        label.innerHTML = 'Status: Fresh ✅';
+        document.getElementById('breakOverlay').style.display = 'none';
+      }
+
+      document.getElementById('sessionLabel').innerText = `Session: ${sessionMinutes} min`;
+    }
+
+    function closeBreak() {
+      document.getElementById('breakOverlay').style.display = 'none';
+      // Reset session simulated time
+      document.getElementById('sessionTime').value = 0;
+      document.getElementById('timeVal').innerText = 0;
+      getRecs();
+    }
   </script>
+
+  <!-- Hard Break Overlay -->
+  <div id="breakOverlay">
+    <h2>Take a Deep Breath 🧘</h2>
+    <p>You've been enjoying content for quite a while. To prevent fatigue and keep your experience premium, we've paused
+      recommendations for a few minutes.</p>
+    <button class="btn" onclick="closeBreak()">I've rested, let's resume</button>
+  </div>
 </body>
 
 </html>
