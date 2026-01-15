@@ -12,6 +12,6 @@ python -m pip install streamlit
 
 echo.
 echo 3. Starting App...
-python -m streamlit run src/dashboard/app.py
+python -m streamlit run src/dashboard/app.py --server.address localhost
 
 pause

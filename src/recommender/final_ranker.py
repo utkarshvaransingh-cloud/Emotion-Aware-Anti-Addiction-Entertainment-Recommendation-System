@@ -97,24 +97,48 @@ class FinalRanker:
                 if popularity > 0.8:
                     score *= (1.1 - fatigue_score) # Dampen high-popularity items
 
-            # 6. Emotion Adjustment (Keep existing logic but move it here)
+            # 6. Emotion Adjustment - Strong mood-based recommendations
             emotion_label = user_state.get("emotion", {}).get("label", "neutral")
             
-            # Strong emotion-based boosts
-            if emotion_label == "sad" and item_genre == "comedy":
-                score *= 2.5
-            elif emotion_label == "sad" and item_genre == "romance":
-                score *= 1.8
-            elif emotion_label == "anxious" and item_genre in ["doc", "animation"]:
-                score *= 2.0
-            elif emotion_label == "happy" and item_genre in ["action", "adventure"]:
-                score *= 2.2
-            elif emotion_label == "bored" and item_genre in ["thriller", "sci-fi", "mystery"]:
-                score *= 2.3
-            elif emotion_label == "neutral":
-                # For neutral, we just let personalization and baseline drive it, 
-                # but maybe give a slight variety boost
-                score *= 1.0
+            # Define genre preferences for each mood
+            mood_boosts = {
+                "happy": {
+                    "boost": ["action", "adventure", "comedy", "musical", "animation"],  # +3x
+                    "good": ["sci-fi", "fantasy"],  # +1.5x
+                    "avoid": ["horror", "thriller", "drama"]  # -0.3x
+                },
+                "sad": {
+                    "boost": ["comedy", "romance", "animation", "musical"],  # +3x - cheer up content
+                    "good": ["drama", "fantasy"],  # +1.5x
+                    "avoid": ["horror", "thriller", "action"]  # -0.3x
+                },
+                "bored": {
+                    "boost": ["thriller", "sci-fi", "mystery", "horror", "action"],  # +3x - exciting content
+                    "good": ["adventure", "crime"],  # +1.5x
+                    "avoid": ["doc", "drama", "romance"]  # -0.3x
+                },
+                "anxious": {
+                    "boost": ["doc", "animation", "comedy", "romance"],  # +3x - calming content
+                    "good": ["drama", "musical", "fantasy"],  # +1.5x
+                    "avoid": ["horror", "thriller", "action", "mystery"]  # -0.3x
+                },
+                "neutral": {
+                    "boost": ["comedy", "action", "adventure"],  # +2x - popular choices
+                    "good": ["drama", "sci-fi", "romance"],  # +1.3x
+                    "avoid": []  # no penalties for neutral
+                }
+            }
+            
+            # Apply emotion-based scoring
+            if emotion_label in mood_boosts:
+                prefs = mood_boosts[emotion_label]
+                if item_genre in prefs.get("boost", []):
+                    score *= 3.0  # Strong boost for preferred genres
+                elif item_genre in prefs.get("good", []):
+                    score *= 1.8  # Moderate boost
+                elif item_genre in prefs.get("avoid", []):
+                    score *= 0.3  # Strong penalty for avoided genres
+                # else: no change for neutral genres
             
             # Time-of-day adjustments
             time_of_day = user_state.get("context", {}).get("time_of_day", "evening")
@@ -140,10 +164,11 @@ class FinalRanker:
             ranked_items.append({
                 "item_id": item_id,
                 "title": item_meta.get("title", item_id),
-                "category": item_genre,
-                "score": score,
+                "category": str(item_genre),
+                "score": float(score),
                 "explanation": explanation,
-                "tmdb_id": item_meta.get("tmdb_id", None)
+                "tmdb_id": item_meta.get("tmdb_id", None),
+                "poster_path": item_meta.get("poster_path", None)
             })
             
         # 9. Sort and Return

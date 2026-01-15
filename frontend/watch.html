@@ -59,6 +59,7 @@
       font-size: 3rem;
       font-weight: 600;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      z-index: 10;
     }
 
     .controls-bar {
@@ -208,6 +209,33 @@
       border-radius: 20px;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(59, 130, 246, 0.5);
+      z-index: 10;
+    }
+
+    .fatigue-meter {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .fatigue-bar {
+      width: 150px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .fatigue-fill {
+      height: 100%;
+      background: var(--success);
+      transition: width 0.5s, background-color 0.5s;
     }
   </style>
 </head>
@@ -217,6 +245,14 @@
     <div class="player-area" id="playerArea">
       <div class="player-overlay"></div>
       <h1 class="movie-title" id="movieTitle">Loading...</h1>
+
+      <div class="fatigue-meter">
+        <small style="color: var(--text-secondary);">Fatigue Level</small>
+        <div class="fatigue-bar">
+          <div class="fatigue-fill" id="fatigueFill" style="width: 10%;"></div>
+        </div>
+      </div>
+
       <div class="playing-indicator">
         <span style="color: var(--success);">● WATCHING</span>
       </div>
@@ -257,10 +293,15 @@
   </div>
 
   <script>
+    // TMDB Image Base URL
+    const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/original';
+    const TMDB_POSTER_BASE = 'https://image.tmdb.org/t/p/w780';
+
     const urlParams = new URLSearchParams(window.location.search);
     const movieTitle = urlParams.get('title') || 'Unknown Movie';
     const duration = parseInt(urlParams.get('duration')) || 120;
     const tmdbId = urlParams.get('tmdb') || '';
+    const posterPath = decodeURIComponent(urlParams.get('poster') || '');
     const emotion = urlParams.get('emotion') || 'happy';
     const timeOfDay = urlParams.get('time') || 'evening';
     const userId = urlParams.get('user') || 'u_1';
@@ -274,9 +315,14 @@
     document.getElementById('movieDuration').textContent = `${duration} min`;
     document.getElementById('sessionTime').textContent = `${currentSessionMinutes} min`;
 
-    if (tmdbId) {
+    // Set background image using TMDB poster
+    if (posterPath) {
       document.getElementById('playerArea').style.backgroundImage =
-        `url('https://picsum.photos/seed/tmdb${tmdbId}/1920/1080')`;
+        `url('${TMDB_POSTER_BASE}${posterPath}')`;
+    } else if (tmdbId) {
+      // Fallback to a placeholder with tmdb id
+      document.getElementById('playerArea').style.backgroundImage =
+        `url('https://picsum.photos/seed/${tmdbId}/1920/1080')`;
     }
 
     const timerInterval = setInterval(() => {
@@ -285,6 +331,22 @@
       const seconds = watchSeconds % 60;
       document.getElementById('watchTimer').textContent =
         `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+      // Update fatigue meter
+      const totalMinutes = currentSessionMinutes + minutes;
+      const fatiguePercent = Math.min(100, (totalMinutes / 140) * 100);
+      const fatigueFill = document.getElementById('fatigueFill');
+      fatigueFill.style.width = fatiguePercent + '%';
+
+      if (fatiguePercent > 80) {
+        fatigueFill.style.backgroundColor = 'var(--danger)';
+      } else if (fatiguePercent > 60) {
+        fatigueFill.style.backgroundColor = '#f59e0b';
+      } else if (fatiguePercent > 40) {
+        fatigueFill.style.backgroundColor = '#fbbf24';
+      } else {
+        fatigueFill.style.backgroundColor = 'var(--success)';
+      }
 
       if (watchSeconds % 60 === 0) {
         currentSessionMinutes++;

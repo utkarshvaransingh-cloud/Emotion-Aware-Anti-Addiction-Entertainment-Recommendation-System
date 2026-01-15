@@ -38,7 +38,60 @@
 
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 1100px;
+    }
+
+    /* Header with User Info */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(30, 41, 59, 0.7);
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .user-name {
+      font-weight: 500;
+    }
+
+    .logout-btn {
+      background: transparent;
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      color: #f87171;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .logout-btn:hover {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: #ef4444;
     }
 
     /* Control Panel */
@@ -107,7 +160,7 @@
     /* Grid */
     #recList {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
     }
 
@@ -126,9 +179,32 @@
       border-color: rgba(255, 255, 255, 0.1);
     }
 
+    .poster-container {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(45deg, #334155, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .poster-container img {
+      transform: scale(1.05);
+    }
+
     .poster-placeholder {
       width: 100%;
-      height: 140px;
+      height: 100%;
       background: linear-gradient(45deg, #334155, #475569);
       display: flex;
       align-items: center;
@@ -169,7 +245,7 @@
       background: rgba(239, 68, 68, 0.05);
     }
 
-    .break-card .poster-placeholder {
+    .break-card .poster-container {
       background: linear-gradient(45deg, #7f1d1d, #991b1b);
     }
 
@@ -248,27 +324,58 @@
       margin-bottom: 2rem;
       color: var(--text-secondary);
     }
+
+    .watch-btn {
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: var(--accent-color);
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85em;
+      font-weight: 500;
+      margin-bottom: 10px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .watch-btn:hover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: var(--accent-color);
+    }
+
+    /* Fatigue debug info */
+    .fatigue-debug {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-top: 5px;
+    }
   </style>
 </head>
 
 <body>
 
   <div class="container">
-    <h1>🍿 Entertainment <span style="color:var(--accent-color)">Engine</span></h1>
+    <div class="header">
+      <h1>🍿 Entertainment <span style="color:var(--accent-color)">Engine</span></h1>
 
-    <!-- User Identity Section -->
-    <div class="controls" style="border-left: 4px solid var(--accent-color);">
-      <h3>👤 User Identity</h3>
-      <div class="input-group">
-        <label>Login As</label>
-        <select id="userId">
-          <option value="u_1">User 1</option>
-          <option value="u_2">User 2</option>
-          <option value="u_3">User 3</option>
-          <option value="u_4">User 4</option>
-          <option value="u_5">User 5</option>
-        </select>
+      <div class="user-info" id="userInfoSection">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <span class="user-name" id="userName">Guest</span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
       </div>
+    </div>
+
+    <!-- User Controls Section -->
+    <div class="controls" style="border-left: 4px solid var(--accent-color);">
+      <h3>🎯 Your Session</h3>
       <div class="input-group">
         <label>Current Vibe</label>
         <select id="emotion">
@@ -280,11 +387,11 @@
         </select>
       </div>
 
-      <div class="input-group" style="min-width: 150px;">
-        <label>Simulate Time: <span id="timeVal" style="color:var(--accent-color)">30</span> min</label>
-        <input type="range" id="sessionTime" min="0" max="300" value="30"
+      <div class="input-group" style="min-width: 180px;">
+        <label>Session Time: <span id="timeVal" style="color:var(--accent-color)">30</span> min</label>
+        <input type="range" id="sessionTime" min="0" max="200" value="30"
           oninput="document.getElementById('timeVal').innerText = this.value">
-        <small style="color:var(--text-secondary); font-size:0.7em;">> 120min triggers Break</small>
+        <small style="color:var(--text-secondary); font-size:0.7em;">~140min triggers Break</small>
       </div>
 
       <div class="input-group">
@@ -338,12 +445,34 @@
         <span id="healthLabel">Status: Fresh</span>
         <span id="sessionLabel">Session: 30 min</span>
       </div>
+      <div class="fatigue-debug" id="fatigueDebug" style="display: none;"></div>
     </div>
 
     <div id="recList"></div>
   </div>
 
   <script>
+    // TMDB Image Base URL
+    const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
+
+    // Check login status
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+    let userId = 'u_1';
+
+    if (!currentUser) {
+      // Redirect to login page
+      window.location.href = 'login.html';
+    } else {
+      userId = currentUser.user_id || 'u_1';
+      document.getElementById('userName').textContent = currentUser.name || currentUser.email.split('@')[0];
+      document.getElementById('userAvatar').textContent = (currentUser.name || currentUser.email)[0].toUpperCase();
+    }
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'login.html';
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     let currentSessionMinutes = parseInt(urlParams.get('session')) || 0;
 
@@ -352,16 +481,14 @@
       document.getElementById('timeVal').innerText = currentSessionMinutes;
     }
 
-    function watchMovie(movieTitle, duration, movieId, tmdbId) {
-      const userId = document.getElementById('userId').value;
+    function watchMovie(movieTitle, duration, movieId, tmdbId, posterPath) {
       const emotion = document.getElementById('emotion').value;
       const timeOfDay = document.getElementById('timeOfDay').value;
 
-      window.location.href = `watch.html?title=${encodeURIComponent(movieTitle)}&duration=${duration}&id=${movieId}&tmdb=${tmdbId || ''}&emotion=${emotion}&time=${timeOfDay}&user=${userId}&session=${currentSessionMinutes}`;
+      window.location.href = `watch.html?title=${encodeURIComponent(movieTitle)}&duration=${duration}&id=${movieId}&tmdb=${tmdbId || ''}&poster=${encodeURIComponent(posterPath || '')}&emotion=${emotion}&time=${timeOfDay}&user=${userId}&session=${currentSessionMinutes}`;
     }
 
     async function getRecs() {
-      const userId = document.getElementById('userId').value;
       const emotion = document.getElementById('emotion').value;
       const genreFilter = document.getElementById('genreFilter').value;
       const sessionTime = document.getElementById('sessionTime').value;
@@ -404,29 +531,28 @@
           card.className = isBreak ? 'card break-card' : 'card';
           const category = item.category ? item.category.toUpperCase() : 'WELLBEING';
 
-          let bgUrl;
+          // Use real TMDB poster if available
+          let posterHtml;
           if (isBreak) {
-            bgUrl = 'https://picsum.photos/seed/break/300/450';
-          } else if (item.tmdb_id) {
-            bgUrl = `https://picsum.photos/seed/tmdb${item.tmdb_id}/300/450`;
+            posterHtml = `<div class="poster-placeholder">🧘</div>`;
+          } else if (item.poster_path) {
+            posterHtml = `<img src="${TMDB_IMAGE_BASE}${item.poster_path}" alt="${item.title}" 
+                            onerror="this.parentElement.innerHTML='<div class=\\'poster-placeholder\\'>🎬</div>'">`;
           } else {
-            bgUrl = `https://picsum.photos/seed/${item.item_id}/300/450`;
+            posterHtml = `<div class="poster-placeholder">🎬</div>`;
           }
 
           const matchPercent = Math.min(100, Math.round(item.score * 100));
           const duration = Math.floor(Math.random() * 90) + 90;
 
           card.innerHTML = `
-            <div class="poster-placeholder" style="background-image: url('${bgUrl}'); background-size: cover; height: 180px;">
-               ${isBreak ? '<span style="background:rgba(0,0,0,0.7); padding:10px; border-radius:8px;">🧘 Break</span>' : ''}
+            <div class="poster-container">
+               ${posterHtml}
             </div>
             <div class="card-content">
-                ${!isBreak ? `<button onclick="watchMovie('${item.title.replace(/'/g, "\\'")}', ${duration}, '${item.item_id}', '${item.tmdb_id || ''}' )" 
-                  style="width: 100%; background: transparent; border: 1px solid rgba(59, 130, 246, 0.5); 
-                  color: var(--accent-color); padding: 5px 10px; border-radius: 4px; cursor: pointer; 
-                  font-size: 0.7em; font-weight: 500; margin-bottom: 8px; transition: all 0.2s;"
-                  onmouseover="this.style.background='rgba(59, 130, 246, 0.1)'"
-                  onmouseout="this.style.background='transparent'">▶ Watch</button>` : ''}
+                ${!isBreak ? `<button class="watch-btn" onclick="watchMovie('${item.title.replace(/'/g, "\\'")}', ${duration}, '${item.item_id}', '${item.tmdb_id || ''}', '${(item.poster_path || '').replace(/'/g, "\\'")}')">
+                  <span>▶</span> Watch Now
+                </button>` : ''}
                 <div class="meta">
                     <span style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">${category}</span>
                     <span style="color:var(--success)">${matchPercent}% Match</span>
@@ -443,9 +569,10 @@
 
       } catch (err) {
         listDiv.innerHTML = `<div class="loading" style="color:var(--danger)">
-                    Connection Failed.<br>
-                    Is the backend server running?<br>
-                    Run <code>python backend/app.py</code> first.
+                    <b>Connection Failed to http://127.0.0.1:8080</b><br><br>
+                    1. Is the backend server running?<br>
+                    2. Check the console for "SUCCESS: Recommendation Engine Ready".<br><br>
+                    <small>Try visiting: <a href="http://127.0.0.1:8080/health" target="_blank">http://127.0.0.1:8080/health</a></small>
                 </div>`;
         console.error(err);
       }
@@ -454,25 +581,34 @@
     function updateHealthMeter(meta) {
       const bar = document.getElementById('healthBar');
       const label = document.getElementById('healthLabel');
+      const debug = document.getElementById('fatigueDebug');
 
       const intervention = meta.fatigue_intervention;
       const fatigueScore = meta.fatigue_score || 0;
+      const metrics = meta.fatigue_metrics || {};
 
-      const sessionMinutes = document.getElementById('sessionTime').value;
-      const calculatedFatigue = intervention === 'hard_break' ? 0.95 : (intervention === 'soft_break' ? 0.7 : (intervention === 'diversify' ? 0.5 : fatigueScore));
-
-      const percent = Math.min(100, Math.round(calculatedFatigue * 100));
+      // Display fatigue score from API
+      const percent = Math.min(100, Math.round(fatigueScore * 100));
       bar.style.width = percent + '%';
 
-      if (percent > 84 || intervention === 'hard_break') {
+      // Show debug info
+      debug.style.display = 'block';
+      debug.innerHTML = `Fatigue Score: ${(fatigueScore * 100).toFixed(1)}% | 
+                         Session: ${metrics.session_minutes || 0}min | 
+                         Repetition: ${((metrics.repetition || 0) * 100).toFixed(0)}% | 
+                         Intervention: ${intervention || 'none'}`;
+
+      const sessionMinutes = document.getElementById('sessionTime').value;
+
+      if (intervention === 'hard_break' || fatigueScore >= 0.84) {
         bar.style.backgroundColor = 'var(--danger)';
         label.innerHTML = 'Status: Critical Fatigue 🚨';
         document.getElementById('breakOverlay').style.display = 'flex';
-      } else if (percent > 60) {
+      } else if (intervention === 'soft_break' || fatigueScore > 0.6) {
         bar.style.backgroundColor = '#f59e0b';
         label.innerHTML = 'Status: Feeling Tired ⚠️';
         document.getElementById('breakOverlay').style.display = 'none';
-      } else if (percent > 40) {
+      } else if (intervention === 'diversify' || fatigueScore > 0.4) {
         bar.style.backgroundColor = '#fbbf24';
         label.innerHTML = 'Status: Warning 👓';
         document.getElementById('breakOverlay').style.display = 'none';

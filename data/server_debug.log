@@ -1,0 +1,903 @@
+[2026-01-13 11:35:08] 
+==================================================
+[2026-01-13 11:35:08]        SERVER STARTUP SEQUENCE
+[2026-01-13 11:35:08] ==================================================
+[2026-01-13 11:36:35] 
+==================================================
+[2026-01-13 11:36:35]        SERVER STARTUP SEQUENCE
+[2026-01-13 11:36:35] ==================================================
+[2026-01-13 11:36:37] Port 8080 is available.
+[2026-01-13 11:36:37] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-13 11:36:37] ==================================================
+
+[2026-01-13 11:36:37] 
+------------------------------
+[2026-01-13 11:36:37] SERVER STARTUP: Loading Data...
+[2026-01-13 11:36:37] ------------------------------
+[2026-01-13 11:36:37] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 11:36:37] ------------------------------
+
+[2026-01-13 12:00:45] 
+==================================================
+[2026-01-13 12:00:45]        SERVER STARTUP SEQUENCE
+[2026-01-13 12:00:45] ==================================================
+[2026-01-13 12:00:48] Port 8080 is available.
+[2026-01-13 12:00:48] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-13 12:00:48] ==================================================
+
+[2026-01-13 12:00:48] 
+------------------------------
+[2026-01-13 12:00:48] SERVER STARTUP: Loading Data...
+[2026-01-13 12:00:48] ------------------------------
+[2026-01-13 12:00:48] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 12:00:48] ------------------------------
+
+[2026-01-13 12:50:30] 
+==================================================
+[2026-01-13 12:50:30]        SERVER STARTUP SEQUENCE
+[2026-01-13 12:50:30] ==================================================
+[2026-01-13 12:50:33] Port 8080 is available.
+[2026-01-13 12:50:33] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-13 12:50:33] ==================================================
+
+[2026-01-13 12:50:33] 
+------------------------------
+[2026-01-13 12:50:33] SERVER STARTUP: Loading Data...
+[2026-01-13 12:50:33] ------------------------------
+[2026-01-13 12:50:33] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 12:50:33] ------------------------------
+
+[2026-01-13 12:59:31] 
+==================================================
+[2026-01-13 12:59:31]        SERVER STARTUP SEQUENCE
+[2026-01-13 12:59:31] ==================================================
+[2026-01-13 12:59:33] Port 8080 is available.
+[2026-01-13 12:59:33] Dashboard Local Link: http://localhost:8080
+[2026-01-13 12:59:33] ==================================================
+
+[2026-01-13 12:59:33] 
+------------------------------
+[2026-01-13 12:59:33] SERVER STARTUP: Loading Data...
+[2026-01-13 12:59:33] ------------------------------
+[2026-01-13 12:59:33] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 12:59:33] ------------------------------
+
+[2026-01-13 13:02:57] 
+==================================================
+[2026-01-13 13:02:57]        SERVER STARTUP SEQUENCE
+[2026-01-13 13:02:57] ==================================================
+[2026-01-13 13:02:59] Port 8080 is available.
+[2026-01-13 13:02:59] Dashboard Local Link: http://localhost:8080
+[2026-01-13 13:02:59] ==================================================
+
+[2026-01-13 13:02:59] 
+------------------------------
+[2026-01-13 13:02:59] SERVER STARTUP: Loading Data...
+[2026-01-13 13:02:59] ------------------------------
+[2026-01-13 13:02:59] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 13:02:59] ------------------------------
+
+[2026-01-13 13:07:05] 
+==================================================
+[2026-01-13 13:07:05]        SERVER STARTUP SEQUENCE
+[2026-01-13 13:07:05] ==================================================
+[2026-01-13 13:07:07] Port 8080 is available.
+[2026-01-13 13:07:07] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-13 13:07:07] ==================================================
+
+[2026-01-13 13:07:07] 
+------------------------------
+[2026-01-13 13:07:07] SERVER STARTUP: Loading Data...
+[2026-01-13 13:07:07] ------------------------------
+[2026-01-13 13:07:07] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 13:07:07] ------------------------------
+
+[2026-01-13 13:09:06] 
+==================================================
+[2026-01-13 13:09:06]        SERVER STARTUP SEQUENCE
+[2026-01-13 13:09:06] ==================================================
+[2026-01-13 13:09:09] Port 8080 is available.
+[2026-01-13 13:09:09] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-13 13:09:09] ==================================================
+
+[2026-01-13 13:09:09] 
+------------------------------
+[2026-01-13 13:09:09] SERVER STARTUP: Loading Data...
+[2026-01-13 13:09:09] ------------------------------
+[2026-01-13 13:09:09] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 13:09:09] ------------------------------
+
+[2026-01-13 13:17:26] 
+==================================================
+[2026-01-13 13:17:26]        SERVER STARTUP SEQUENCE
+[2026-01-13 13:17:26] ==================================================
+[2026-01-13 13:17:29] Port 8080 is available.
+[2026-01-13 13:17:29] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-13 13:17:29] ==================================================
+
+[2026-01-13 13:17:29] 
+------------------------------
+[2026-01-13 13:17:29] SERVER STARTUP: Loading Data...
+[2026-01-13 13:17:29] ------------------------------
+[2026-01-13 13:17:29] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 13:17:29] ------------------------------
+
+[2026-01-13 13:17:55] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:30:56] 
+==================================================
+[2026-01-13 13:30:56]        SERVER STARTUP SEQUENCE
+[2026-01-13 13:30:56] ==================================================
+[2026-01-13 13:30:58] Port 8080 is available.
+[2026-01-13 13:30:58] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-13 13:30:58] ==================================================
+
+[2026-01-13 13:30:58] 
+------------------------------
+[2026-01-13 13:30:58] SERVER STARTUP: Loading Data...
+[2026-01-13 13:30:58] ------------------------------
+[2026-01-13 13:30:58] SUCCESS: Recommendation Engine Ready.
+[2026-01-13 13:30:58] ------------------------------
+
+[2026-01-13 13:32:03] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:07] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:11] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:11] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:11] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:11] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:11] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:11] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:12] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:22] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:22] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:22] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:22] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:22] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-13 13:37:22] ERROR in /recommend: 'duration_watched'
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'duration_watched'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\backend\app.py", line 93, in get_recommendations
+    state = get_user_state(request.user_id, request.context, raw_emotion)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\src\state.py", line 76, in get_user_state
+    cumulative_daily_minutes = user_history["duration_watched"].sum() if not user_history.empty else 0
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\UTKARSH VARAN SINGH\OneDrive\Documents\masi\project\Content_Recommendation_System_G\.env312\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'duration_watched'
+
+[2026-01-14 21:00:03] 
+==================================================
+[2026-01-14 21:00:03]        SERVER STARTUP SEQUENCE
+[2026-01-14 21:00:03] ==================================================
+[2026-01-14 21:00:05] Port 8080 is available.
+[2026-01-14 21:00:05] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-14 21:00:05] ==================================================
+
+[2026-01-14 21:00:05] 
+------------------------------
+[2026-01-14 21:00:05] SERVER STARTUP: Loading Data...
+[2026-01-14 21:00:05] ------------------------------
+[2026-01-14 21:00:05] SUCCESS: Recommendation Engine Ready.
+[2026-01-14 21:00:05] ------------------------------
+
+[2026-01-15 16:26:43] 
+==================================================
+[2026-01-15 16:26:43]        SERVER STARTUP SEQUENCE
+[2026-01-15 16:26:43] ==================================================
+[2026-01-15 16:26:45] Port 8080 is available.
+[2026-01-15 16:26:45] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 16:26:45] ==================================================
+
+[2026-01-15 16:26:45] 
+------------------------------
+[2026-01-15 16:26:45] SERVER STARTUP: Loading Data...
+[2026-01-15 16:26:45] ------------------------------
+[2026-01-15 16:26:45] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 16:26:45] ------------------------------
+
+[2026-01-15 16:27:33] Ranking for User: u_1 with genre=None
+[2026-01-15 16:27:49] Ranking for User: u_1 with genre=None
+[2026-01-15 16:27:49] Ranking for User: u_1 with genre=None
+[2026-01-15 16:27:50] Ranking for User: u_1 with genre=None
+[2026-01-15 16:28:07] Ranking for User: u_2 with genre=None
+[2026-01-15 16:28:48] Ranking for User: u_2 with genre=None
+[2026-01-15 16:29:21] Ranking for User: u_1 with genre=None
+[2026-01-15 16:29:54] Ranking for User: u_1 with genre=None
+[2026-01-15 16:30:10] Ranking for User: u_1 with genre=None
+[2026-01-15 16:30:11] Ranking for User: u_1 with genre=None
+[2026-01-15 16:30:11] Ranking for User: u_1 with genre=None
+[2026-01-15 16:30:12] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:00] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:13] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:13] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:18] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:18] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:25] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:25] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:26] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:34] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:38] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:39] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:40] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:40] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:41] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:42] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:42] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:49] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:50] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:50] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:51] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:51] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:51] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:51] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:51] Ranking for User: u_1 with genre=None
+[2026-01-15 16:38:51] Ranking for User: u_1 with genre=None
+[2026-01-15 17:45:24] 
+==================================================
+[2026-01-15 17:45:24]        SERVER STARTUP SEQUENCE
+[2026-01-15 17:45:24] ==================================================
+[2026-01-15 17:45:26] Port 8080 is available.
+[2026-01-15 17:45:26] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 17:45:26] ==================================================
+
+[2026-01-15 17:45:26] 
+------------------------------
+[2026-01-15 17:45:26] SERVER STARTUP: Loading Data...
+[2026-01-15 17:45:26] ------------------------------
+[2026-01-15 17:45:26] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 17:45:26] ------------------------------
+
+[2026-01-15 17:52:14] 
+==================================================
+[2026-01-15 17:52:14]        SERVER STARTUP SEQUENCE
+[2026-01-15 17:52:14] ==================================================
+[2026-01-15 17:52:16] Port 8080 is available.
+[2026-01-15 17:52:16] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 17:52:16] ==================================================
+
+[2026-01-15 17:52:16] 
+------------------------------
+[2026-01-15 17:52:16] SERVER STARTUP: Loading Data...
+[2026-01-15 17:52:16] ------------------------------
+[2026-01-15 17:52:16] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 17:52:16] ------------------------------
+
+[2026-01-15 17:52:48] Ranking for User: u_1 with genre=None
+[2026-01-15 17:52:48] Ranking for User: u_1 with genre=None
+[2026-01-15 17:52:48] Ranking for User: u_1 with genre=None
+[2026-01-15 17:52:49] Ranking for User: u_1 with genre=None
+[2026-01-15 17:52:49] Ranking for User: u_1 with genre=None
+[2026-01-15 17:52:49] Ranking for User: u_1 with genre=None
+[2026-01-15 17:52:55] Ranking for User: u_1 with genre=None
+[2026-01-15 17:57:25] 
+==================================================
+[2026-01-15 17:57:25]        SERVER STARTUP SEQUENCE
+[2026-01-15 17:57:25] ==================================================
+[2026-01-15 17:57:27] Port 8080 is available.
+[2026-01-15 17:57:27] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 17:57:27] ==================================================
+
+[2026-01-15 17:57:27] 
+------------------------------
+[2026-01-15 17:57:27] SERVER STARTUP: Loading Data...
+[2026-01-15 17:57:27] ------------------------------
+[2026-01-15 17:57:27] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 17:57:27] ------------------------------
+
+[2026-01-15 17:57:36] Ranking for User: u_1 with genre=None
+[2026-01-15 17:59:34] 
+==================================================
+[2026-01-15 17:59:34]        SERVER STARTUP SEQUENCE
+[2026-01-15 17:59:34] ==================================================
+[2026-01-15 17:59:36] Port 8080 is available.
+[2026-01-15 17:59:36] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 17:59:36] ==================================================
+
+[2026-01-15 17:59:36] 
+------------------------------
+[2026-01-15 17:59:36] SERVER STARTUP: Loading Data...
+[2026-01-15 17:59:36] ------------------------------
+[2026-01-15 17:59:36] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 17:59:36] ------------------------------
+
+[2026-01-15 18:00:13] Ranking for User: u_1 with genre=None
+[2026-01-15 18:00:32] Ranking for User: u_1 with genre=None
+[2026-01-15 18:00:32] Ranking for User: u_1 with genre=None
+[2026-01-15 18:00:45] Ranking for User: u_1 with genre=None
+[2026-01-15 18:00:56] Ranking for User: u_1 with genre=musical
+[2026-01-15 18:01:19] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:28] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:28] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:32] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:32] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:45] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:45] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:48] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:48] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:53] Ranking for User: u_1 with genre=None
+[2026-01-15 18:01:53] Ranking for User: u_1 with genre=None
+[2026-01-15 18:02:15] Ranking for User: u_1 with genre=None
+[2026-01-15 18:02:28] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:03] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:04] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:04] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:05] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:06] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:06] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:08] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:21] Ranking for User: u_1 with genre=None
+[2026-01-15 22:19:53] Ranking for User: u_1 with genre=None
+[2026-01-15 22:21:46] Ranking for User: u_1 with genre=None
+[2026-01-15 22:21:46] Ranking for User: u_1 with genre=None
+[2026-01-15 22:21:46] Ranking for User: u_1 with genre=None
+[2026-01-15 22:29:34] 
+==================================================
+[2026-01-15 22:29:34]        SERVER STARTUP SEQUENCE
+[2026-01-15 22:29:34] ==================================================
+[2026-01-15 22:29:37] Port 8080 is available.
+[2026-01-15 22:29:37] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 22:29:37] ==================================================
+
+[2026-01-15 22:29:37] 
+------------------------------
+[2026-01-15 22:29:37] SERVER STARTUP: Loading Data...
+[2026-01-15 22:29:37] ------------------------------
+[2026-01-15 22:29:37] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 22:29:37] ------------------------------
+
+[2026-01-15 22:30:39] Ranking for User: u_1 with genre=None
+[2026-01-15 22:30:39] Ranking for User: u_1 with genre=None
+[2026-01-15 22:30:53] Ranking for User: u_1 with genre=None
+[2026-01-15 22:31:02] Ranking for User: u_1 with genre=drama
+[2026-01-15 22:31:12] Ranking for User: u_1 with genre=drama
+[2026-01-15 22:31:17] Ranking for User: u_1 with genre=drama
+[2026-01-15 22:31:22] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:33:03] Ranking for User: u_1 with genre=None
+[2026-01-15 22:37:34] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:38:03] 
+==================================================
+[2026-01-15 22:38:03]        SERVER STARTUP SEQUENCE
+[2026-01-15 22:38:03] ==================================================
+[2026-01-15 22:38:05] Port 8080 is available.
+[2026-01-15 22:38:05] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 22:38:05] ==================================================
+
+[2026-01-15 22:38:05] 
+------------------------------
+[2026-01-15 22:38:05] SERVER STARTUP: Loading Data...
+[2026-01-15 22:38:05] ------------------------------
+[2026-01-15 22:38:05] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 22:38:05] ------------------------------
+
+[2026-01-15 22:38:45] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:44:17] 
+==================================================
+[2026-01-15 22:44:17]        SERVER STARTUP SEQUENCE
+[2026-01-15 22:44:17] ==================================================
+[2026-01-15 22:44:19] Port 8080 is available.
+[2026-01-15 22:44:19] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 22:44:19] ==================================================
+
+[2026-01-15 22:44:20] 
+------------------------------
+[2026-01-15 22:44:20] SERVER STARTUP: Loading Data...
+[2026-01-15 22:44:20] ------------------------------
+[2026-01-15 22:44:20] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 22:44:20] ------------------------------
+
+[2026-01-15 22:45:14] Ranking for User: u_1 with genre=None
+[2026-01-15 22:45:21] Ranking for User: u_1 with genre=None
+[2026-01-15 22:45:21] Ranking for User: u_1 with genre=None
+[2026-01-15 22:45:31] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:45:43] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:45:44] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:45:44] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:45:50] Ranking for User: u_1 with genre=horror
+[2026-01-15 22:46:04] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:16] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:16] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:17] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:18] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:18] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:18] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:22] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:28] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:28] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:32] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:46] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:53] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:54] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:55] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:55] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:55] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:55] Ranking for User: u_1 with genre=None
+[2026-01-15 22:46:59] Ranking for User: u_1 with genre=None
+[2026-01-15 22:52:34] 
+==================================================
+[2026-01-15 22:52:34]        SERVER STARTUP SEQUENCE
+[2026-01-15 22:52:34] ==================================================
+[2026-01-15 22:52:36] Port 8080 is available.
+[2026-01-15 22:52:37] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 22:52:37] ==================================================
+
+[2026-01-15 22:52:37] 
+------------------------------
+[2026-01-15 22:52:37] SERVER STARTUP: Loading Data...
+[2026-01-15 22:52:37] ------------------------------
+[2026-01-15 22:52:37] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 22:52:37] ------------------------------
+
+[2026-01-15 22:53:30] Ranking for User: u_1 with genre=None
+[2026-01-15 22:53:36] Ranking for User: u_1 with genre=None
+[2026-01-15 22:53:43] Ranking for User: u_1 with genre=None
+[2026-01-15 22:53:55] Ranking for User: u_1 with genre=None
+[2026-01-15 23:54:41] 
+==================================================
+[2026-01-15 23:54:41]        SERVER STARTUP SEQUENCE
+[2026-01-15 23:54:41] ==================================================
+[2026-01-15 23:54:43] Port 8080 is available.
+[2026-01-15 23:54:43] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-15 23:54:43] ==================================================
+
+[2026-01-15 23:54:43] 
+------------------------------
+[2026-01-15 23:54:43] SERVER STARTUP: Loading Data...
+[2026-01-15 23:54:43] ------------------------------
+[2026-01-15 23:54:43] SUCCESS: Recommendation Engine Ready.
+[2026-01-15 23:54:43] ------------------------------
+
+[2026-01-15 23:58:32] Ranking for User: u_1 with genre=None
+[2026-01-15 23:58:41] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:24] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:33] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:37] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:41] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:48] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:49] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:49] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:49] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:49] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:50] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:51] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:51] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:52] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:53] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:53] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:53] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:54] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:55] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:56] Ranking for User: u_1 with genre=None
+[2026-01-15 23:59:56] Ranking for User: u_1 with genre=None
+[2026-01-16 00:00:04] Ranking for User: u_1 with genre=None
+[2026-01-16 00:00:07] Ranking for User: u_1 with genre=None
+[2026-01-16 00:00:11] Ranking for User: u_1 with genre=None
+[2026-01-16 00:02:09] Ranking for User: u_1 with genre=None
+[2026-01-16 00:02:17] Ranking for User: u_1 with genre=None
+[2026-01-16 00:02:45] Ranking for User: u_1 with genre=None
+[2026-01-16 00:03:03] Ranking for User: u_1 with genre=None
+[2026-01-16 00:03:11] Ranking for User: u_1 with genre=None
+[2026-01-16 00:03:15] Ranking for User: u_1 with genre=None
+[2026-01-16 00:25:40] 
+==================================================
+[2026-01-16 00:25:40]        SERVER STARTUP SEQUENCE
+[2026-01-16 00:25:40] ==================================================
+[2026-01-16 00:25:42] Port 8080 is available.
+[2026-01-16 00:25:42] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-16 00:25:42] ==================================================
+
+[2026-01-16 00:25:42] 
+------------------------------
+[2026-01-16 00:25:42] SERVER STARTUP: Loading Data...
+[2026-01-16 00:25:42] ------------------------------
+[2026-01-16 00:25:42] SUCCESS: Recommendation Engine Ready.
+[2026-01-16 00:25:42] ------------------------------
+
+[2026-01-16 00:26:02] Ranking for User: u_1 with genre=None
+[2026-01-16 00:26:15] Ranking for User: u_1 with genre=None
+[2026-01-16 00:26:16] Ranking for User: u_1 with genre=None
+[2026-01-16 00:26:17] Ranking for User: u_1 with genre=None
+[2026-01-16 00:32:59] Ranking for User: u_1 with genre=None

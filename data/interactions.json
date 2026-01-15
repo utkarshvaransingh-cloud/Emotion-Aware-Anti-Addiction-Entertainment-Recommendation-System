@@ -75,5 +75,170 @@
     "movie_duration": 111,
     "completed": false,
     "timestamp": "2026-01-11T21:22:21.665Z"
+  },
+  {
+    "user_id": "u_2",
+    "movie_id": "i_38",
+    "title": "Gone Girl",
+    "emotion": "bored",
+    "time_of_day": "night",
+    "duration_watched": 0,
+    "movie_duration": 93,
+    "completed": false,
+    "timestamp": "2026-01-15T10:59:18.276Z"
+  },
+  {
+    "user_id": "u_2",
+    "movie_id": "i_38",
+    "title": "Gone Girl",
+    "emotion": "bored",
+    "time_of_day": "night",
+    "duration_watched": 0,
+    "movie_duration": 93,
+    "completed": false,
+    "timestamp": "2026-01-15T10:59:18.278Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_13",
+    "title": "Titanic",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 117,
+    "completed": false,
+    "timestamp": "2026-01-15T10:59:51.451Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_8",
+    "title": "Mission: Impossible",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 173,
+    "completed": false,
+    "timestamp": "2026-01-15T11:00:07.916Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_71",
+    "title": "The Greatest Showman",
+    "emotion": "anxious",
+    "time_of_day": "morning",
+    "duration_watched": 0,
+    "movie_duration": 113,
+    "completed": false,
+    "timestamp": "2026-01-15T12:31:14.659Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_71",
+    "title": "The Greatest Showman",
+    "emotion": "anxious",
+    "time_of_day": "morning",
+    "duration_watched": 0,
+    "movie_duration": 113,
+    "completed": false,
+    "timestamp": "2026-01-15T12:31:14.660Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_28",
+    "title": "Blade Runner 2049",
+    "emotion": "bored",
+    "time_of_day": "night",
+    "duration_watched": 0,
+    "movie_duration": 129,
+    "completed": false,
+    "timestamp": "2026-01-15T16:49:50.914Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_27",
+    "title": "Interstellar",
+    "emotion": "anxious",
+    "time_of_day": "night",
+    "duration_watched": 0,
+    "movie_duration": 126,
+    "completed": false,
+    "timestamp": "2026-01-15T17:23:52.495Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_56",
+    "title": "The Shawshank Redemption",
+    "emotion": "bored",
+    "time_of_day": "afternoon",
+    "duration_watched": 0,
+    "movie_duration": 138,
+    "completed": false,
+    "timestamp": "2026-01-15T18:32:05.439Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_56",
+    "title": "The Shawshank Redemption",
+    "emotion": "bored",
+    "time_of_day": "afternoon",
+    "duration_watched": 0,
+    "movie_duration": 138,
+    "completed": false,
+    "timestamp": "2026-01-15T18:32:05.441Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_20",
+    "title": "Superbad",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 164,
+    "completed": false,
+    "timestamp": "2026-01-15T18:32:14.739Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_41",
+    "title": "The Lord of the Rings",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 139,
+    "completed": false,
+    "timestamp": "2026-01-15T18:32:41.458Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_20",
+    "title": "Superbad",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 100,
+    "completed": false,
+    "timestamp": "2026-01-15T18:32:59.752Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_1",
+    "title": "The Avengers",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 131,
+    "completed": false,
+    "timestamp": "2026-01-15T18:56:08.236Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_46",
+    "title": "The Conjuring",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 92,
+    "completed": false,
+    "timestamp": "2026-01-15T19:02:52.898Z"
   }
 ]

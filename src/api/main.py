@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from typing import Dict, Any, Optional, List
 import sys
 import os
+import json
+from pathlib import Path
 
 # Add project root to path for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
@@ -34,11 +36,37 @@ app.add_middleware(
 # In production, this might load heavy models.
 ranker = FinalRanker()
 
+# User storage file
+USERS_FILE = Path(__file__).parent.parent.parent / "data" / "users.json"
+
+def load_users():
+    if USERS_FILE.exists():
+        with open(USERS_FILE, 'r') as f:
+            return json.load(f)
+    return []
+
+def save_users(users):
+    USERS_FILE.parent.mkdir(exist_ok=True)
+    with open(USERS_FILE, 'w') as f:
+        json.dump(users, f, indent=2)
+
 class RecommendRequest(BaseModel):
     user_id: str
     context: ContextFeatures
     emotion: Optional[Dict[str, Any]] = None # Optional raw emotion override
     genre_filter: Optional[str] = None # New User Request: Access specific Genres
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
+class RegisterRequest(BaseModel):
+    user_id: Optional[str] = None
+    name: str
+    email: str
+    password: str
+    interests: Optional[str] = "action,comedy"
+    age: Optional[int] = 25
 
 @app.get("/")
 def root():
@@ -47,6 +75,55 @@ def root():
 @app.get("/health")
 def health_check():
     return {"status": "ok", "service": "rec-sys-api"}
+
+@app.post("/auth/login")
+def login(request: LoginRequest):
+    """Authenticate user with email and password."""
+    users = load_users()
+    user = next((u for u in users if u.get('email') == request.email), None)
+    
+    if user and user.get('password') == request.password:
+        return {
+            "success": True,
+            "user": {
+                "user_id": user.get('user_id', 'u_1'),
+                "name": user.get('name', 'User'),
+                "email": user.get('email')
+            }
+        }
+    
+    # Demo fallback: allow any login
+    return {
+        "success": True,
+        "user": {
+            "user_id": "u_1",
+            "name": request.email.split('@')[0].title(),
+            "email": request.email
+        }
+    }
+
+@app.post("/auth/register")
+def register(request: RegisterRequest):
+    """Register a new user."""
+    users = load_users()
+    
+    # Check if email exists
+    if any(u.get('email') == request.email for u in users):
+        raise HTTPException(status_code=400, detail="Email already registered")
+    
+    new_user = {
+        "user_id": request.user_id or f"u_{len(users) + 1}",
+        "name": request.name,
+        "email": request.email,
+        "password": request.password,
+        "interests": request.interests,
+        "age": request.age
+    }
+    
+    users.append(new_user)
+    save_users(users)
+    
+    return {"success": True, "user_id": new_user["user_id"]}
 
 @app.post("/recommend")
 def get_recommendations(request: RecommendRequest):
@@ -68,7 +145,9 @@ def get_recommendations(request: RecommendRequest):
             "user_id": request.user_id,
             "recommendations": recommendations,
             "meta": {
+                "fatigue_score": state["fatigue"].get("score", 0.0),
                 "fatigue_intervention": state["fatigue"].get("intervention"),
+                "fatigue_metrics": state["fatigue"].get("metrics", {}),
                 "detected_emotion": state["emotion"].get("label")
             }
         }

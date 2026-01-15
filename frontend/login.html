@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - RecSys Premium Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent-color: #3b82f6;
+      --accent-hover: #2563eb;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+      --input-bg: #0f172a;
+      --border-color: #334155;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent-color);
+    }
+
+    .login-card {
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-header h2 {
+      color: var(--text-primary);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .login-header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 1rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .form-group input::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
+    .btn-primary {
+      width: 100%;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .divider span {
+      color: var(--text-secondary);
+      padding: 0 1rem;
+      font-size: 0.85rem;
+    }
+
+    .signup-link {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .signup-link a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .signup-link a:hover {
+      color: #60a5fa;
+    }
+
+    .error-message {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .remember-me input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent-color);
+    }
+
+    .forgot-password {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .forgot-password:hover {
+      color: #60a5fa;
+    }
+
+    /* Floating particles background */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(59, 130, 246, 0.3);
+      border-radius: 50%;
+      animation: float 15s infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="particles">
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+    <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 1s;"></div>
+  </div>
+
+  <div class="login-container">
+    <div class="logo">
+      <h1>🍿 Entertainment <span>Engine</span></h1>
+    </div>
+
+    <div class="login-card">
+      <div class="login-header">
+        <h2>Welcome Back</h2>
+        <p>Sign in to continue your personalized experience</p>
+      </div>
+
+      <div class="error-message" id="errorMessage">
+        Invalid email or password. Please try again.
+      </div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="remember-forgot">
+          <label class="remember-me">
+            <input type="checkbox" id="rememberMe">
+            Remember me
+          </label>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+
+      <div class="divider">
+        <span>or</span>
+      </div>
+
+      <p class="signup-link">
+        Don't have an account? <a href="signup.html">Create one</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Check if already logged in
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+      window.location.href = 'index.html';
+    }
+
+    async function handleLogin(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      try {
+        const response = await fetch('http://127.0.0.1:8080/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          // Store user info
+          localStorage.setItem('currentUser', JSON.stringify(data.user));
+
+          // Redirect to main page
+          window.location.href = 'index.html';
+        } else {
+          errorMessage.textContent = data.detail || 'Invalid email or password.';
+          errorMessage.classList.add('show');
+        }
+      } catch (err) {
+        // Fallback for demo: simple local auth
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        const user = users.find(u => u.email === email && u.password === password);
+
+        if (user) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          window.location.href = 'index.html';
+        } else {
+          // Demo mode: allow any login with default users
+          const demoUsers = {
+            'u1@demo.com': { user_id: 'u_1', name: 'Alex', email: 'u1@demo.com' },
+            'u2@demo.com': { user_id: 'u_2', name: 'Jordan', email: 'u2@demo.com' },
+            'u3@demo.com': { user_id: 'u_3', name: 'Sam', email: 'u3@demo.com' }
+          };
+
+          if (demoUsers[email]) {
+            localStorage.setItem('currentUser', JSON.stringify(demoUsers[email]));
+            window.location.href = 'index.html';
+          } else if (password.length >= 1) {
+            // Create a temporary user for demo
+            const tempUser = {
+              user_id: 'u_1',
+              name: email.split('@')[0],
+              email: email
+            };
+            localStorage.setItem('currentUser', JSON.stringify(tempUser));
+            window.location.href = 'index.html';
+          } else {
+            errorMessage.textContent = 'Please enter a valid password.';
+            errorMessage.classList.add('show');
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
