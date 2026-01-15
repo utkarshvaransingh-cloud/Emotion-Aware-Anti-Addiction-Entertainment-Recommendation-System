@@ -901,3 +901,53 @@ KeyError: 'duration_watched'
 [2026-01-16 00:26:16] Ranking for User: u_1 with genre=None
 [2026-01-16 00:26:17] Ranking for User: u_1 with genre=None
 [2026-01-16 00:32:59] Ranking for User: u_1 with genre=None
+[2026-01-16 00:40:41] Ranking for User: u_1 with genre=None
+[2026-01-16 02:19:12] 
+==================================================
+[2026-01-16 02:19:12]        SERVER STARTUP SEQUENCE
+[2026-01-16 02:19:12] ==================================================
+[2026-01-16 02:19:14] Port 8080 is available.
+[2026-01-16 02:19:14] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-16 02:19:14] ==================================================
+
+[2026-01-16 02:19:14] 
+------------------------------
+[2026-01-16 02:19:14] SERVER STARTUP: Loading Data...
+[2026-01-16 02:19:14] ------------------------------
+[2026-01-16 02:19:14] SUCCESS: Recommendation Engine Ready.
+[2026-01-16 02:19:14] ------------------------------
+
+[2026-01-16 02:20:26] Ranking for User: u_1 with genre=None
+[2026-01-16 02:20:43] Ranking for User: u_1 with genre=None
+[2026-01-16 02:20:53] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:06] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:09] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:17] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:22] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:25] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:29] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:39] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:46] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:49] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:52] Ranking for User: u_1 with genre=None
+[2026-01-16 02:21:56] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:00] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:04] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:07] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:12] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:12] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:12] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:13] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:13] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:13] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:15] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:22] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:23] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:23] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:23] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:23] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:24] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:36] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:40] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:42] Ranking for User: u_1 with genre=None
+[2026-01-16 02:22:43] Ranking for User: u_1 with genre=None
