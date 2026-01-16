@@ -951,3 +951,106 @@ KeyError: 'duration_watched'
 [2026-01-16 02:22:40] Ranking for User: u_1 with genre=None
 [2026-01-16 02:22:42] Ranking for User: u_1 with genre=None
 [2026-01-16 02:22:43] Ranking for User: u_1 with genre=None
+[2026-01-16 02:48:26] 
+==================================================
+[2026-01-16 02:48:26]        SERVER STARTUP SEQUENCE
+[2026-01-16 02:48:26] ==================================================
+[2026-01-16 02:48:29] Port 8080 is available.
+[2026-01-16 02:48:29] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-16 02:48:29] ==================================================
+
+[2026-01-16 02:48:29] 
+------------------------------
+[2026-01-16 02:48:29] SERVER STARTUP: Loading Data...
+[2026-01-16 02:48:29] ------------------------------
+[2026-01-16 02:48:29] SUCCESS: Recommendation Engine Ready.
+[2026-01-16 02:48:29] ------------------------------
+
+[2026-01-16 02:49:04] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:29] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:34] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:35] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:39] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:40] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:40] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:40] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:40] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:41] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:41] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:42] Ranking for User: u_1 with genre=None
+[2026-01-16 02:54:51] Ranking for User: u_1 with genre=None
+[2026-01-16 13:10:44] Ranking for User: u_1 with genre=None
+[2026-01-16 13:10:44] Ranking for User: u_1 with genre=None
+[2026-01-16 13:10:51] Ranking for User: u_1 with genre=None
+[2026-01-16 13:10:55] Ranking for User: u_1 with genre=None
+[2026-01-16 16:53:25] 
+==================================================
+[2026-01-16 16:53:25]        SERVER STARTUP SEQUENCE
+[2026-01-16 16:53:25] ==================================================
+[2026-01-16 16:53:27] Port 8080 is available.
+[2026-01-16 16:53:27] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-16 16:53:27] ==================================================
+
+[2026-01-16 16:53:27] 
+------------------------------
+[2026-01-16 16:53:27] SERVER STARTUP: Loading Data...
+[2026-01-16 16:53:27] ------------------------------
+[2026-01-16 16:53:27] SUCCESS: Recommendation Engine Ready.
+[2026-01-16 16:53:27] ------------------------------
+
+[2026-01-16 16:54:31] Ranking for User: u_1 with genre=None
+[2026-01-16 16:54:31] Ranking for User: u_1 with genre=None
+[2026-01-16 16:54:37] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:12] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:22] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:25] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:29] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:32] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:37] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:42] Ranking for User: u_1 with genre=None
+[2026-01-16 16:55:49] Ranking for User: u_1 with genre=None
+[2026-01-16 16:56:21] Ranking for User: u_1 with genre=None
+[2026-01-16 18:19:34] 
+==================================================
+[2026-01-16 18:19:34]        SERVER STARTUP SEQUENCE
+[2026-01-16 18:19:34] ==================================================
+[2026-01-16 18:19:36] Port 8080 is available.
+[2026-01-16 18:19:36] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-16 18:19:36] ==================================================
+
+[2026-01-16 18:19:37] 
+------------------------------
+[2026-01-16 18:19:37] SERVER STARTUP: Loading Data...
+[2026-01-16 18:19:37] ------------------------------
+[2026-01-16 18:19:37] SUCCESS: Recommendation Engine Ready.
+[2026-01-16 18:19:37] ------------------------------
+
+[2026-01-16 18:21:22] Ranking for User: u_1 with genre=None
+[2026-01-16 18:21:26] Ranking for User: u_1 with genre=None
+[2026-01-16 18:21:40] Ranking for User: u_1 with genre=None
+[2026-01-16 18:21:53] Ranking for User: u_1 with genre=None
+[2026-01-16 18:22:11] Ranking for User: u_1 with genre=None
+[2026-01-16 18:32:43] Ranking for User: u_1 with genre=None
+[2026-01-16 18:32:54] Ranking for User: u_1 with genre=None
+[2026-01-16 18:33:12] Ranking for User: u_1 with genre=action
+[2026-01-16 18:33:45] Ranking for User: u_1 with genre=action
+[2026-01-16 18:34:00] Ranking for User: u_1 with genre=action
+[2026-01-16 18:54:48] 
+==================================================
+[2026-01-16 18:54:48]        SERVER STARTUP SEQUENCE
+[2026-01-16 18:54:48] ==================================================
+[2026-01-16 18:54:50] Port 8080 is available.
+[2026-01-16 18:54:50] Dashboard Local Link: http://127.0.0.1:8080
+[2026-01-16 18:54:50] ==================================================
+
+[2026-01-16 18:54:50] 
+------------------------------
+[2026-01-16 18:54:50] SERVER STARTUP: Loading Data...
+[2026-01-16 18:54:50] ------------------------------
+[2026-01-16 18:54:50] SUCCESS: Recommendation Engine Ready.
+[2026-01-16 18:54:50] ------------------------------
+
+[2026-01-16 18:55:35] Ranking for User: u_1 with genre=None
+[2026-01-16 18:57:14] Ranking for User: u_1 with genre=None
+[2026-01-16 18:57:14] Ranking for User: u_1 with genre=None
+[2026-01-16 18:57:14] Ranking for User: u_1 with genre=None

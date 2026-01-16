@@ -273,5 +273,82 @@
     "movie_duration": 103,
     "completed": false,
     "timestamp": "2026-01-15T19:10:52.164Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_9",
+    "title": "The Matrix",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 172,
+    "completed": false,
+    "timestamp": "2026-01-16T11:26:17.410Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_9",
+    "title": "The Matrix",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 172,
+    "completed": false,
+    "timestamp": "2026-01-16T11:26:17.411Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_9",
+    "title": "The Matrix",
+    "emotion": "happy",
+    "time_of_day": "evening",
+    "duration_watched": 0,
+    "movie_duration": 178,
+    "completed": false,
+    "timestamp": "2026-01-16T11:26:38.357Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_7",
+    "title": "John Wick",
+    "emotion": "anxious",
+    "time_of_day": "afternoon",
+    "duration_watched": 1,
+    "movie_duration": 164,
+    "completed": false,
+    "timestamp": "2026-01-16T13:05:31.374Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_7",
+    "title": "John Wick",
+    "emotion": "anxious",
+    "time_of_day": "afternoon",
+    "duration_watched": 1,
+    "movie_duration": 164,
+    "completed": false,
+    "timestamp": "2026-01-16T13:05:31.375Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_46",
+    "title": "The Conjuring",
+    "emotion": "bored",
+    "time_of_day": "night",
+    "duration_watched": 1,
+    "movie_duration": 176,
+    "completed": false,
+    "timestamp": "2026-01-16T13:27:06.840Z"
+  },
+  {
+    "user_id": "u_1",
+    "movie_id": "i_46",
+    "title": "The Conjuring",
+    "emotion": "bored",
+    "time_of_day": "night",
+    "duration_watched": 1,
+    "movie_duration": 176,
+    "completed": false,
+    "timestamp": "2026-01-16T13:27:06.842Z"
   }
 ]
